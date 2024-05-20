@@ -1,0 +1,35 @@
+version: "3.1"
+
+stories:
+
+  - story: greet_story
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - story: new_booking_story
+    steps:
+      - intent: booking
+      - action: utter_date
+      - intent: date
+        entities:
+          - entity_name: slot_date
+      - action: utter_time
+      - intent: time
+        entities:
+          - entity_name: slot_time
+      - action: utter_people_number
+      - intent: people_number
+        entities:
+          - entity_name: slot_nb_people
+      - action: action_check_is_available
+
+  - story: new_booking_story2
+    steps:
+      - or:
+          - slot_was_set:
+              - isAvailable: true
+      - action: utter_reservation_name
+      - intent: reservation_name
+        entities:
+          - entity_name: slot_name

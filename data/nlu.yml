@@ -1,0 +1,81 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - Bonjour
+      - Salut
+      - Coucou
+      - Hey
+      - Hello
+      - Wesh
+      - Bonsoir
+      - Bonmatin
+
+  - intent: goodbye
+    examples: |
+      - Salut
+      - Ciao
+      - À plus
+      - À bientôt
+      - Bonne journée
+      - Au revoir 
+
+  - intent: affirm
+    examples: |
+      - oui
+      - ouais
+      - yes
+      - biensur
+      - en effet
+      - ok
+
+  - intent: deny
+    examples: |
+      - no
+      - non
+      - nope
+      - jamais
+      - je ne penses pas
+
+  - intent: booking
+    examples: |
+      - Je voudrais réserver une table.
+      - Je veux réserver une table pour trois personnes.
+      - Est-ce que je pourrais réserver une table pour six personnes ?
+      - Je désire réserver une table pour ce soir.
+      - Est-ce que je peux réserver une table pour ce soir ?
+      - Je voudrais réserver une table pour deux personnes.
+      - Pouvez-vous me réserver une table pour demain midi ?
+      - Nouvelle réservation
+      - Je souhaite réserver une table en terrasse.
+      - Est-il possible d'avoir une table près de la fenêtre ?
+
+
+  - intent: date
+    examples: |
+      - [19/09/2024](date)
+      - Pour le [12/03/2025](date)
+      - le [21/07/2023](date)
+      - Puis-je reserver pour le [17/12/2024](date)
+      - Peut-on reserver pour le [2/02/2024](date)
+
+  - intent: time
+    examples: |
+      - [13:00](time)
+      - [12h](time)
+      - pour [19:45](time)
+
+  - intent: people_number
+    examples: |
+      - [2]{"entity": "nb_people"}
+      - Pour [3]{"entity": "nb_people"}
+      - Pour [6]{"entity": "nb_people"} personnes
+      - Une table pour [4]{"entity": "nb_people"}
+
+  - intent: bot_challenge
+    examples: |
+      - es-tu un robot ?
+      - es-tu un humain ?
+      - je parle à un bot ?
+      - je parle à un humain ?

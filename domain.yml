@@ -1,0 +1,96 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - booking
+  - date
+  - time
+  - people_number
+  - reservation_name
+  - phone_number
+  - affirm
+  - deny
+  - bot_challenge
+
+actions:
+  - action_check_is_available
+
+entities:
+  - date
+  - time
+  - nb_people
+  - reservation_name
+  - nb_phone
+  - id_booking
+
+slots:
+  isAvailable:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+  slot_date:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: date
+
+  slot_time:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: time
+
+  slot_nb_people:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: nb_people
+
+  slot_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: reservation_name
+
+responses:
+  utter_greet:
+    - text: |
+        Bonjour! Que puis-je faire pour vous ?
+          - Nouvelle réservation
+          - Annuler une réservation
+          - Info sur une réservation
+          - Menu du jour
+          - Liste des allergènes
+          - Voir la carte
+
+  utter_goodbye:
+    - text: A bientot !
+
+  utter_date:
+    - text: Quand souhaitez-vous réserver la table ? (JJ/MM/YYYY)
+
+  utter_time:
+    - text: Pour quelle heure ? (HH:mm)
+
+  utter_people_number:
+    - text: Pour combien de personne souhaiter vous reserver ?
+
+  utter_reservation_name:
+    - text: A quel nom dois-je nottez la reservation ?
+
+  utter_phone_number:
+    - text: Pouvez-vous me renseigner un numéro de téléphone pour la réservation ?
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
