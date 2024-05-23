@@ -1,20 +1,21 @@
 version: "3.1"
 
 intents:
-  - greet
-  - goodbye
-  - booking
-  - date
-  - time
-  - people_number
-  - reservation_name
+  - greet #
+  - goodbye #
+  - booking #
+  - date #
+  - time #
+  - people_number #
+  - reservation_name #
   - phone_number
-  - affirm
-  - deny
-  - bot_challenge
+  - affirm #
+  - deny #
+  - bot_challenge #
 
 actions:
   - action_check_is_available
+  - action_save_booking
 
 entities:
   - date
@@ -23,6 +24,7 @@ entities:
   - reservation_name
   - nb_phone
   - id_booking
+  - phone_number
 
 slots:
   isAvailable:
@@ -58,6 +60,13 @@ slots:
     mappings:
       - type: from_entity
         entity: reservation_name
+
+  slot_phone_number:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: nb_phone
 
 responses:
   utter_greet:

@@ -73,6 +73,42 @@ nlu:
       - Pour [6]{"entity": "nb_people"} personnes
       - Une table pour [4]{"entity": "nb_people"}
 
+  - intent: reservation_name
+    examples: |
+      - [Bonneau](reservation_name)
+      - [LAMBERT](reservation_name)
+      - Pour [Richard](reservation_name)
+      - Au nom de [Jaulin](reservation_name)
+      - Reservé pour [Fernandes](reservation_name)
+
+  - regex: reservation_name
+    examples: |
+      - [A-Za-z]+
+      - [A-Za-z-']+
+
+  - intent: phone_number
+    examples: |
+      - [0680260993](nb_phone)
+      - [+330680260993](nb_phone)
+      - [+33680260993](nb_phone)
+      - [+33 680260993](nb_phone)
+      - [06 80 26 09 93](nb_phone)
+      - [+33 06 80 26 09 93](nb_phone)
+      - [+33 6 80 26 09 93](nb_phone)
+      - [06.80.26.09.93](nb_phone)
+      - [+33 06.80.26.09.93](nb_phone)
+      - [+33 6.80.26.09.93](nb_phone)
+      - [06-80-26-09-93](nb_phone)
+      - [+33 06-80-26-09-93](nb_phone)
+      - [+33 6-80-26-09-93](nb_phone)
+      
+
+  - regex: nb_phone
+    examples: |
+      - (\d\d[ .-]){4}\d\d
+      - (\+33)(\d\d[ .-]){4}\d\d
+      - (\+33)\s(\d\d[ .-]){4}\d\d
+
   - intent: bot_challenge
     examples: |
       - es-tu un robot ?

@@ -33,3 +33,8 @@ stories:
       - intent: reservation_name
         entities:
           - entity_name: slot_name
+      - action: utter_phone_number
+      - intent: phone_number
+        entities:
+          - entity_name: slot_phone_number
+      - action: action_save_booking
