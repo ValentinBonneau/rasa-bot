@@ -57,8 +57,12 @@ nlu:
       - [19/09/2024](date)
       - Pour le [12/03/2025](date)
       - le [21/07/2023](date)
-      - Puis-je reserver pour le [17/12/2024](date)
+      - Puis-je reserver pour le [17-12-2024](date)
       - Peut-on reserver pour le [2/02/2024](date)
+
+  - regex: date
+    examples: |
+      - \d{1,2}\/\d{1,2}\/\d{2,4}
 
   - intent: time
     examples: |
@@ -115,3 +119,12 @@ nlu:
       - es-tu un humain ?
       - je parle à un bot ?
       - je parle à un humain ?
+
+  - intent: menu
+    examples: |
+      - Puis-je avoir le menu
+      - Pourais-je avoir le menu
+      - le menu
+      - le menu SVP
+      - quel est le menu s'il vous plait
+      - donnez moi le menu
